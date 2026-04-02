@@ -69,4 +69,4 @@ WPF-приложение для решения:
 1. Установите [Visual Studio 2022](https://visualstudio.microsoft.com/) с нагрузкой `.NET Desktop Development`
 2. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/ваш-логин/Tk_Kosheleva.git
+   git clone https://github.com/ParisNe/Tk_Kosheleva.git
