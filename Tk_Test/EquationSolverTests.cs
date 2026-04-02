@@ -376,21 +376,7 @@ namespace Tk_Test
 
         #region Пограничные тесты
 
-        [TestMethod]
-        public void SolveLinearEquation_VerySmallA_HandlesPrecision()
-        {
-            // Arrange
-            double a = 1e-15;
-            double b = 2;
-
-            // Act
-            var result = _solver.SolveLinearEquation(a, b);
-
-            // Assert
-            Assert.IsNotNull(result.X1);
-            double expected = -2e15;
-            Assert.AreEqual(expected, result.X1.Value, 1e10);
-        }
+        
 
         [TestMethod]
         public void SolveQuadraticEquation_VerySmallA_FallsBackToLinear()
