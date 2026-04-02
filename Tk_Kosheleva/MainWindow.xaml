@@ -21,22 +21,26 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Левая панель: ввод коэффициентов -->
-        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" BorderBrush="Gray" BorderThickness="1" 
+        <!-- ЛЕВАЯ ПАНЕЛЬ: ввод коэффициентов a, b, c -->
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" 
+                BorderBrush="Gray" BorderThickness="1" 
                 Margin="5" Padding="10" CornerRadius="8" Height="160">
             <StackPanel>
                 <TextBlock Text="Введите коэффициенты" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
 
+                <!-- Поле для коэффициента a -->
                 <StackPanel Orientation="Horizontal" Margin="0,5">
                     <TextBlock Text="a =" Width="30" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtA" Width="100" Margin="5,0" Text="0" VerticalContentAlignment="Center"/>
                 </StackPanel>
 
+                <!-- Поле для коэффициента b -->
                 <StackPanel Orientation="Horizontal" Margin="0,5">
                     <TextBlock Text="b =" Width="30" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtB" Width="100" Margin="5,0" Text="0" VerticalContentAlignment="Center"/>
                 </StackPanel>
 
+                <!-- Поле для коэффициента c (будет активно только для квадратного уравнения) -->
                 <StackPanel Orientation="Horizontal" Margin="0,5">
                     <TextBlock Text="c =" Width="30" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtC" Width="100" Margin="5,0" Text="0" VerticalContentAlignment="Center"/>
@@ -44,21 +48,26 @@
             </StackPanel>
         </Border>
 
-        <!-- выбор вида уравнения -->
-        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Gray" BorderThickness="1" 
+        <!-- ПРАВАЯ ПАНЕЛЬ: выбор вида уравнения -->
+        <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="3"
+                BorderBrush="Gray" BorderThickness="1" 
                 Margin="5" Padding="10" CornerRadius="8" Height="160">
             <StackPanel>
                 <TextBlock Text="Вид уравнения" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
 
+                <!-- Радиокнопка: линейное уравнение (по умолчанию выбрано) -->
                 <RadioButton x:Name="rbLinear" Content="Линейное" GroupName="EquationType" 
                              IsChecked="True" Margin="0,5" Checked="EquationType_Changed"/>
+
+                <!-- Радиокнопка: квадратное уравнение -->
                 <RadioButton x:Name="rbQuadratic" Content="Квадратное" GroupName="EquationType" 
                              Margin="0,5" Checked="EquationType_Changed"/>
             </StackPanel>
         </Border>
 
-        <!-- Блок с результатом -->
-        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" 
+        <!-- БЛОК РЕЗУЛЬТАТА: вывод решения уравнения -->
+        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                BorderBrush="Gray" BorderThickness="1" 
                 Margin="5,20,5,5" Padding="10" CornerRadius="8" Background="#F0F0F0">
             <StackPanel>
                 <TextBlock Text="Решение уравнения" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
@@ -66,12 +75,12 @@
             </StackPanel>
         </Border>
 
-        <!-- Кнопка вычисления -->
+        <!-- КНОПКА ВЫЧИСЛЕНИЯ -->
         <Button x:Name="btnCalculate" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
                 Content="Вычислить" Width="120" Height="35" HorizontalAlignment="Center"
                 Margin="5" Click="BtnCalculate_Click" FontWeight="Bold" FontSize="14"/>
 
-        <!-- Дополнительная информация -->
+        <!-- ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ (справочная строка)  -->
         <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
                    Text="Формулы: линейное → a·x + b = 0; квадратное → a·x² + b·x + c = 0" 
                    FontSize="11" Foreground="Gray" TextWrapping="Wrap" Margin="5"/>
