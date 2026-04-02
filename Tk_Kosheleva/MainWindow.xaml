@@ -57,7 +57,7 @@
 
                 <!-- Радиокнопка: линейное уравнение (по умолчанию выбрано) -->
                 <RadioButton x:Name="rbLinear" Content="Линейное" GroupName="EquationType" 
-                             IsChecked="True" Margin="0,5" Checked="EquationType_Changed"/>
+                             Margin="0,5" Checked="EquationType_Changed"/>
 
                 <!-- Радиокнопка: квадратное уравнение -->
                 <RadioButton x:Name="rbQuadratic" Content="Квадратное" GroupName="EquationType" 
